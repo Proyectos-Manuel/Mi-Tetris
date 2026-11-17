@@ -46,7 +46,7 @@ export interface TickResult {
   gameOver: boolean;
 }
 
-const LINES_PER_LEVEL = 10;
+const LINES_PER_LEVEL = 5;
 
 // Classic-ish scoring: more lines at once = big bonus, plus combo multiplier.
 export function scoreForClear(linesCleared: number, level: number, combo: number): number {
@@ -57,7 +57,7 @@ export function scoreForClear(linesCleared: number, level: number, combo: number
 
 export function dropIntervalMs(level: number): number {
   // Starts at 1000ms, shrinks as the level rises, floors at ~60ms.
-  return Math.max(60, 1000 - (level - 1) * 80);
+  return Math.max(60, 900 - (level - 1) * 120);
 }
 
 export function createInitialState(): GameState {
